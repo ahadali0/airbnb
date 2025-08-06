@@ -38,17 +38,23 @@ const uniqueStaysData = [
   { type: "Flat", country: "Germany" },
   { type: "Room", country: "Italy" },
   { type: "Villa", country: "Spain" },
+  { type: "Villa", country: "Spain" },
+  { type: "Villa", country: "Spain" },
+  { type: "Villa", country: "Spain" },
+  { type: "Villa", country: "Spain" },
+  { type: "Villa", country: "Spain" },
 ];
 
 const travelTipsData = [
-  "Family travel hub",
-  "Tips and inspiration",
-  "Family budget travel",
-  "Vacation ideas for any budget",
-  "Explore nature with the family",
-  "Must-see parks for family travel",
-  "Kid-friendly state parks",
-  "Travel Europe on a budget",
+  { city: "Albuquerque", state: "New Mexico" },
+  { city: "Austin", state: "Texas" },
+  { city: "Charlotte", state: "North Carolina" },
+  { city: "Boston", state: "Massachusetts" },
+  { city: "Charlotte", state: "North Carolina" },
+  { city: "Chicago", state: "Illinois" },
+  { city: "Charlotte", state: "North Carolina" },
+  { city: "Denver", state: "Colorado" },
+  { city: "Charlotte", state: "North Carolina" },
 ];
 
 const airbnbFriendlyCities = [
@@ -57,6 +63,11 @@ const airbnbFriendlyCities = [
   { city: "Boston", state: "Massachusetts" },
   { city: "Chicago", state: "Illinois" },
   { city: "Denver", state: "Colorado" },
+  { city: "Charlotte", state: "North Carolina" },
+  { city: "Charlotte", state: "North Carolina" },
+  { city: "Charlotte", state: "North Carolina" },
+  { city: "Charlotte", state: "North Carolina" },
+  { city: "Charlotte", state: "North Carolina" },
   { city: "Charlotte", state: "North Carolina" },
 ];
 
@@ -68,40 +79,64 @@ export default function CategoryTabs() {
   };
 
   return (
-    <div className="mt-5">
-      <h1 className="text-2xl font-semibold">Inspiration for future getaways</h1>
+    <div className="mt-10">
+      <h1 className="text-2xl font-semibold">
+        Inspiration for future getaways
+      </h1>
 
       <Box className="mt-1">
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab className="font-semibold" label="Unique Stays" {...a11yProps(0)} />
-          <Tab className="font-semibold" label="Travel tips & inspiration" {...a11yProps(1)} />
-          <Tab className="font-semibold" label="Airbnb-friendly apartments" {...a11yProps(2)} />
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          className="border-b border-b-gray-300"
+        >
+          <Tab
+            className="font-semibold"
+            label="Unique Stays"
+            {...a11yProps(0)}
+          />
+          <Tab
+            className="font-semibold"
+            label="Travel tips & inspiration"
+            {...a11yProps(1)}
+          />
+          <Tab
+            className="font-semibold"
+            label="Airbnb-friendly apartments"
+            {...a11yProps(2)}
+          />
         </Tabs>
 
         <CustomTabPanel value={value} index={0}>
-          <ul className="space-y-2">
+          <ul className="grid grid-cols-6 gap-6">
             {uniqueStaysData.map((item, index) => (
-              <li key={index}>
-                <strong>{item.type}</strong> in {item.country}
-              </li>
+              <div className="flex flex-col" key={index}>
+                <strong>{item.type}</strong>
+                <p>{item.country}</p>
+              </div>
             ))}
           </ul>
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={1}>
-          <ul className="list-disc pl-5 space-y-1">
-            {travelTipsData.map((tip, index) => (
-              <li key={index}>{tip}</li>
+          <ul className="grid grid-cols-6 gap-6">
+            {travelTipsData.map((item, index) => (
+              <div className="flex flex-col" key={index}>
+                <strong>{item.city}</strong>
+                <p>{item.state}</p>
+              </div>
             ))}
           </ul>
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
-          <ul className="space-y-2">
+          <ul className="grid grid-cols-6 gap-6">
             {airbnbFriendlyCities.map((item, index) => (
-              <li key={index}>
-                <strong>{item.city}</strong>, {item.state}
-              </li>
+              <div className="flex flex-col" key={index}>
+                <strong>{item.city}</strong>
+                <p>{item.state}</p>
+              </div>
             ))}
           </ul>
         </CustomTabPanel>

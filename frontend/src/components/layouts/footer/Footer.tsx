@@ -14,10 +14,9 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <SectionWrapper>
-        
-        <CategoryTabs/>
+        <CategoryTabs />
       </SectionWrapper>
-      <LayoutWrapper className="">
+      <LayoutWrapper className="mt-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Support</h3>

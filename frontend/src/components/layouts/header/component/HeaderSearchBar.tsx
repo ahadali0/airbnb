@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 
 export default function HeaderSearchBar() {
   return (
-    <div className="w-full max-w-4xl mx-auto  ">
+    <div className="  w-full">
       <div className="flex items-center justify-between bg-white rounded-full shadow-lg border border-gray-200 ">
         <div className="hover:bg-gray-200 cursor-pointer py-2 duration-150 px-8 rounded-full">
           <TextField
