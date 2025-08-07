@@ -12,7 +12,7 @@ import CategoryTabs from "../../CategoryTabs";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-gray-50 border-t border-gray-200 lg:mb-0 md:mb-0 mb-16">
       <SectionWrapper>
         <CategoryTabs />
       </SectionWrapper>

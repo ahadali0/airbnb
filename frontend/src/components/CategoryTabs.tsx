@@ -2,6 +2,7 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import "../App.css";
 
 interface CustomTabPanelProps {
   children?: React.ReactNode;
@@ -84,32 +85,34 @@ export default function CategoryTabs() {
         Inspiration for future getaways
       </h1>
 
-      <Box className="mt-1">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-          className="border-b border-b-gray-300"
-        >
-          <Tab
-            className="font-semibold"
-            label="Unique Stays"
-            {...a11yProps(0)}
-          />
-          <Tab
-            className="font-semibold"
-            label="Travel tips & inspiration"
-            {...a11yProps(1)}
-          />
-          <Tab
-            className="font-semibold"
-            label="Airbnb-friendly apartments"
-            {...a11yProps(2)}
-          />
-        </Tabs>
+      <Box className="mt-1 ">
+        <Box className="overflow-x-auto hide-scrollbar snap-x snap-mandatory">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+            className="min-w-max border-b border-b-gray-300"
+          >
+            <Tab
+              className="font-semibold"
+              label="Unique Stays"
+              {...a11yProps(0)}
+            />
+            <Tab
+              className="font-semibold"
+              label="Travel tips & inspiration"
+              {...a11yProps(1)}
+            />
+            <Tab
+              className="font-semibold"
+              label="Airbnb-friendly apartments"
+              {...a11yProps(2)}
+            />
+          </Tabs>
+        </Box>
 
         <CustomTabPanel value={value} index={0}>
-          <ul className="grid grid-cols-6 gap-6">
+          <ul className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-6">
             {uniqueStaysData.map((item, index) => (
               <div className="flex flex-col" key={index}>
                 <strong>{item.type}</strong>
@@ -120,7 +123,7 @@ export default function CategoryTabs() {
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={1}>
-          <ul className="grid grid-cols-6 gap-6">
+          <ul className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2  gap-6">
             {travelTipsData.map((item, index) => (
               <div className="flex flex-col" key={index}>
                 <strong>{item.city}</strong>
@@ -131,7 +134,7 @@ export default function CategoryTabs() {
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
-          <ul className="grid grid-cols-6 gap-6">
+          <ul className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2   gap-6">
             {airbnbFriendlyCities.map((item, index) => (
               <div className="flex flex-col" key={index}>
                 <strong>{item.city}</strong>

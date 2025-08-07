@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 
 const headerNavData: any = [
   {
+    id: 1,
     title: "AnyWhere",
     path: "/",
   },
   {
+    id: 2,
     title: "Anytime",
     path: "/",
   },
   {
+    id: 3,
     title: "Add guests",
     path: "/",
   },
@@ -26,8 +29,8 @@ function HeaderWhenScrollDown() {
         />
       </video>
       <div className="flex gap-5 px-4">
-        {headerNavData.map(({ title, path }: any) => (
-          <Link to={path} className="border-l">
+        {headerNavData.map(({ title, path, id }: any) => (
+          <Link key={id} to={path} className="border-l">
             {title}
           </Link>
         ))}

@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { useRef } from "react";
 import HotelCard from "../components/HotelCard";
-import img from "../../public/51d6e969-95e3-4c06-a653-e4a93fc22dd4.avif";
+import img from "/public/51d6e969-95e3-4c06-a653-e4a93fc22dd4.avif";
 import SectionWrapper from "../components/SectionWrapper";
 
 interface Property {
