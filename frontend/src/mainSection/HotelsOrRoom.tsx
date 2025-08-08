@@ -255,7 +255,7 @@ export default function HotelsOrRoom() {
     ref: React.RefObject<HTMLDivElement>,
     direction: "left" | "right"
   ) => {
-    const cardWidth = 260;
+    const cardWidth = 300;
     if (ref.current) {
       ref.current.scrollBy({
         left: direction === "left" ? -cardWidth : cardWidth,
@@ -284,11 +284,11 @@ export default function HotelsOrRoom() {
 
       <div
         ref={ref}
-        className="flex  overflow-x-auto scroll-smooth pb-4 scrollbar-hide snap-x snap-mandatory"
+        className="flex  overflow-x-auto scroll-smooth pb-4 scrollbar-hide "
         style={{ scrollbarWidth: "none" }}
       >
         {data.map((item) => (
-          <div key={item.id} className="min-w-[14rem] flex-shrink-0 snap-start">
+          <div key={item.id} className="flex-shrink-0 w-full snap-start basis-40 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 px-2">
             <HotelCard
               image={item.image}
               night={item.price}

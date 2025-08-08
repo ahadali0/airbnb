@@ -17,7 +17,7 @@ function HotelCard({
   isGuestFavorite = false,
 }: HotelCardProps) {
   return (
-    <div className="">
+    <div className="w-full">
       <div className="object-cover rounded-3xl relative">
         <img
           src={image}
@@ -27,7 +27,7 @@ function HotelCard({
         />
 
         {isGuestFavorite && (
-          <div className="bg-white/70 cursor-pointer w-max px-3 font-semibold py-1 absolute top-3 left-3 rounded-full">
+          <div className="bg-white/70 cursor-pointer pb-[2px] w-max px-2 flex items-center justify-center font-semibold  absolute top-3 left-3 rounded-full">
             <p className="text-xs">Guest Favourite</p>
           </div>
         )}

@@ -80,7 +80,7 @@ export default function CategoryTabs() {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 mb-16">
       <h1 className="text-2xl font-semibold">
         Inspiration for future getaways
       </h1>

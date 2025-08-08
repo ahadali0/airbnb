@@ -16,7 +16,7 @@ export default function Footer() {
       <SectionWrapper>
         <CategoryTabs />
       </SectionWrapper>
-      <LayoutWrapper className="mt-16">
+      <LayoutWrapper className="">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
